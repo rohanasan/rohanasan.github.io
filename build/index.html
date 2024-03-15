@@ -6,6 +6,7 @@ Rohanasan: An Extremely fast backend framework
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"  />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"  />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css"  />
 </head>
 <body>
 <p class="bg-yellow-400 text-center">
@@ -105,11 +106,29 @@ Learn more
 Tutorial
 </a>
 <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">
-How to quickly deploy a static website
+Simple hello world program:
 </h1>
 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">
-Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.
+This is a basic hello world implementation in Rohanasan backend framework (C/C++)
 </p>
+<pre>
+<code class="language-c">
+#include "./include/rohanasan.h"
+
+const char* myhandle(struct request req)
+{
+   return send_http_response(default_html_header,
+   "<h1>Hello from Rohanasan!</h1>");
+}
+
+int main()
+{
+    init(8080);
+    serve(myhandle);
+    return 0;
+}
+</code>
+</pre>
 <a href="#" class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
 Read more
 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -126,11 +145,32 @@ Read more
 Design
 </a>
 <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-Start with Flowbite Design System
-<h2>
+Solve Complex problems with ease:
+</h2>
 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.
+An example to send a html file named index.html present inside html folder. It also checks if the request made was a get request or a post request if, the path is / it returns an index.html persent inside ./html directory. 
 </p>
+<pre>
+<code class="language-c">
+#include "./include/rohanasan.h"
+
+const char* myhandle(struct request req)
+{
+    if (eql(req.method, "GET")) {
+        if (eql(req.path, "/"))
+            return send_file(default_html_header, "./html/index.html");
+        else return send_404();
+     else return send_404();}
+}
+
+int main()
+{
+    printf("Listening at http://localhost:8080\n");
+    init(8080);
+    serve(myhandle);
+}
+</code>
+</pre>
 <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
 Read more
 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -146,11 +186,41 @@ Read more
 Code
 </a>
 <h2 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-Best react libraries around the web
+How to create your own project?
 </h2>
 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.
+Just follow the following steps:
 </p>
+<ol>
+<li class="text-white font-semibold font-xl">
+Open terminal on your linux&#47;mac&#47;unix&#47;FreeBSD and run the following command:
+</li>
+<br none  />
+<pre>
+<code class="language-bash">
+curl https://raw.githubusercontent.com/rohanasan/rohanasan_c/main/project_maker.c -o project_maker.c
+gcc ./project_maker.c
+./a.out
+rm ./project_maker.c
+rm ./a.out
+</pre>
+</code>
+<br none  />
+<li class="text-white font-semibold">
+The menu driven program will ask you for a few configurations.
+</li>
+<li class="text-white font-semibold">
+Configure them as you want!
+</li>
+<li class="text-white font-semibold">
+Cd into your directory and enjoy using Rohanasan!!!
+</li>
+<li class="text-yellow-400 font-semibold">
+Having doubts? join:
+<iframe src="https://discord.com/widget?id=1217035966221651998&theme=dark" width="350" height="150" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+</iframe>
+</li>
+</ol>
 <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center">
 Read more
 <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -161,9 +231,36 @@ Read more
 </div>
 </div>
 </section>
+<section class="bg-white dark:bg-gray-900">
+<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+Sponsors:
+</h1>
+<p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
+Be the first one to sponsor:
+</p>
+<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+<a href="https://buymeacoffee.com/rohanvashisht" target="_blank" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+Sponsor
+<svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"  />
+</svg>
+</a>
+</div>
+</div>
+</section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js">
 </script>
 <script src="./js/index.js">
+</script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/c.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/bash.min.js">
+</script>
+<script>
+hljs.highlightAll();
 </script>
 </body>
 </html>
