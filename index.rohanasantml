@@ -6,7 +6,7 @@ head
     title
         {Rohanasan: An Extremely fast backend framework}
     title end
-    meta name="viewport" content="width=device-width, initial-scale=1.0" end
+    meta name="viewport" content="width=device-width" end
     link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" end
     link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css" end
 head end
